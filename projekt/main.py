@@ -1,6 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import random as rand
+import random
+from datetime import datetime
+import csv
+
 plik='liczby.txt'
 
 
@@ -19,7 +22,7 @@ def ex_2():
 
 	with open(plik, 'w') as zad:
 			for i in range(1,n+1):
-				liczba=rand.randint(1,100)
+				liczba=random.randint(1,100)
 				zad.write(str(liczba)+'\n')
 def ex_3():
 	liczby=[]
@@ -77,32 +80,42 @@ def ex_5():
 	plt.show()
 
 def ex_6():
-		n=int(input("Ile wyrazow:"))
-		dict = {x: x ** 2 for x in range(1, n + 1)}
-		print(dict)
-		return dict
+	n=int(input("Ile wyrazow w slowniku:"))
+	dict = {x: x ** 2 for x in range(1, n + 1)}
+	print(dict)
+	return dict
 
 
-def ex_7(dict):
-    return sum(dict.values())
+def ex_7():
+	n=int(input("Ile wyrazow w slowniku:"))
+	dict = {x: x ** 2 for x in range(1, n + 1)}
+	suma = sum(dict.values())
+	print(f"Suma wartości w słowniku: {suma}")
+	return suma
 
 
 def ex_8():
-    pass
+        for i in range(0,10):
+            current_time = datetime.now()
+            file_name = f"{current_time}.bin"  
+            with open(file_name, "wb") as plik:
+                for j in range(0,100):
+                     plik.write(bytearray(random.randint(0,100)))
+
+
 
 def ex_9():
     pass
 
-
 def main():
-    ex_1()
-    ex_2()
-    ex_3()
-    ex_5()
-    ex_6()
-    ex_7()
-    ex_8()
-    ex_9()
+		ex_1()
+		ex_2()
+		ex_3()
+		ex_5()
+		ex_6()
+		ex_7()
+		ex_8()
+		ex_9()
 
 if __name__ == '__main__':
     main()
