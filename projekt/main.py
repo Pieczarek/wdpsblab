@@ -4,6 +4,11 @@ import random
 from datetime import datetime
 import csv
 
+
+# Poprawność zadań: 8/11
+# Dodatki: 1.5/2
+# Znormalizowane: 0,7307692308
+
 plik='liczby.txt'
 
 
